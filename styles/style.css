@@ -3,7 +3,7 @@ body {
   color: #333; }
 
 #main-container {
-  height: 500px; }
+  border: 1px solid black; }
 
 #movie-containers {
   height: 100%;
