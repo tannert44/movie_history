@@ -5,3 +5,38 @@ body {
   font: 100% $font-stack;
   color: $primary-color;
 }
+
+#main-container  {
+ // border: 1px solid black;
+  height: 500px;
+}
+#movie-row {
+  //border: 1px solid red;
+}
+#movie-containers{
+  //border: 3px dotted green;
+  height: 100%;
+  margin-bottom: 20px;
+  //background-color: #777;
+}
+.row1 {
+  height: 100%;
+  // margin-top: 20px; don't need margin's bc row-height has margin
+   //margin-bottom: 20px;
+  //border: 5px dotted purple;
+  
+}
+.row2{
+  height: 100%;
+  // margin-top: 20px;
+   margin-bottom: 20px;
+ // border: 5px dotted orange;
+}
+#movie-info{
+  height:100%;
+  //border: 1px dotted blue;
+  background-color: #eee;
+}
+.rowHeightDiv{
+  height: 200px;
+}
