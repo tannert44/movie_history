@@ -20,7 +20,26 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"],
   
   var myFirebaseRef = new Firebase("https://moviehistory.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
+  var films = snapshot.val();
+  
+   var moviesArray = [];
+  for (var i in films) {
+    moviesArray[moviesArray.length] = films[i];
+  }
 
+  var moviesObj = {
+    movies: moviesArray
+  };
+    console.log(moviesObj);
+  require(['hbs!../templates/movies'], 
+    function(moviesTemplate) {
+    $("#main").append(moviesTemplate(moviesObj));
   });
+  
+  });
+
+
+
+
 });
 
