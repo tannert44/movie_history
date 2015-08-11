@@ -1,0 +1,17 @@
+{
+  "movies": [{
+    
+    "title": "The Big Lebowski",
+    "year": "1998",
+    "actors": ["Jeff Bridges", "John Goodman", "Julianne Moore", "Steve Buscemi"],
+    "rating": "8",
+    "watched": "true"
+  },
+  {
+    "title": "This Is Spinal Tap",
+    "year": "1984",
+    "actors": ["Christopher Guest", "Michael McKean", "Harry Shearer", "Rob Reiner"],
+    "rating": "8",
+    "watched": "true"
+  }]
+};
