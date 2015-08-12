@@ -2,9 +2,9 @@ define(["jquery"], function($){
   $(document).ready(function() {
     $("button").click(function(e) {
       e.preventDefault();
-    var userInput = $("#userInput").val();
-    var userRating = $("#userRating").val();
-    console.log(userInput, userRating);
+      var userInput = $("#userInput").val();
+      var userRating = $("#userRating").val();
+      console.log(userInput, userRating);
       $.ajax({
         url: "http://www.omdbapi.com/?t=" + userInput,
       }).done(function(data){
@@ -23,11 +23,14 @@ define(["jquery"], function($){
           "watched": watched
         };
 
-        if ($("#watch").prop("checked") === false && $("#notWatch").prop("checked") === false) {
-          alert("Help");
+        if (userInput === "") {
+          alert("Please enter a movie title")
         }
-        else if(userRating > 10){
+        else if((userRating < 1  || userRating > 10) || userRating === "") {
            alert("Please enter a number from 1 - 10");
+        }
+        else if ($("#watch").prop("checked") === false && $("#notWatch").prop("checked") === false) {
+          alert("Have you watched " + userInput + "?");
         }
         else {
           $.ajax({
