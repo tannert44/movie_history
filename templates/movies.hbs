@@ -1,10 +1,11 @@
 {{#each movies}}
-<div id="movie-containers" class="col-md-3 col-xs-12">
+<div data-key="{{@key}}" class="col-md-3 col-xs-12 movies">
   <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-    <h3>{{title}} | {{year}}</h3>
+    <h3>{{title}}</h3><h4>({{year}})</h4>
     <p>Starring: {{actors}}</p>
     <p>Your Rating: {{rating}}</p>
-    <button  class="btn btn-danger btn-xs delButton">Delete</button>
+    <p class="genre">Genre: {{genre}}</p>
+    <button class="btn btn-danger btn-xs delButton">Delete</button>
   </div>
 </div>
 {{/each}}

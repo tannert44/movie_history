@@ -20,6 +20,7 @@ define(["jquery"], function($){
           "year": data.Year,
           "actors": data.Actors,
           "rating": userRating,
+          "genre": data.Genre,
           "watched": watched
         };
 
