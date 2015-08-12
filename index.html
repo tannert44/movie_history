@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Add</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Add</a></li>
         </ul>
 
           <form class="navbar-form navbar-right" role="search">
@@ -40,6 +40,61 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+<!-- Add music modal -->
+
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Add Favorite Movies</h4>
+            </div>
+
+              <div class="modal-body">
+                  <div class="form-group">
+                    <label for="movieTitle">Movie</label>
+                    <input type="text" class="form-control" placeholder="Movie Title" id="userInput">
+                  </div>
+                  <div class="form-group">
+                    <label for="rating">Rating
+                    <input type="text" class="form-control" placeholder="Rate from 1 - 10" id="userRating">
+                    </label>
+                  </div>
+
+                  <div class="row">
+                    
+                    <div class="form-group col-md-4 col-md-offset-2">
+                      <label>Watched</label>
+                    <input type="radio" class="form-control" name="movie" id="watch" placeholder="watched">
+                    </div>
+                    
+                    <div class="form-group col-md-4">
+                      <label>Have Not Watched</label>
+                    <input type="radio" class="form-control" name="movie" id="notWatch">
+                    </div>
+                  </div> <!-- radio-row -->
+              </div>
+            
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Close</a>
+              <button class="btn btn-primary addButton">Add</button>
+            </div> <!-- modal-footer div -->
+
+          </div> <!-- modal-content div -->
+        </div> <!-- modal-dialog div -->
+    </div> <!-- myModal div -->
+
+
+ 
+
+
+
+
+
+
+
+
+
 <!-- Movie List container -->
 
 
@@ -50,85 +105,42 @@
           <div class="sidebar-content col-md-10 hidden-xs hidden-sm">
             <div class="row sidebar-Options">
               <div class="sidebar-MyMovies col-md-12">My Movies</div>
-              <div class="sidebar-Shop col-md-12">Shop <span class="text-right glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></div>
+              <!-- <div class="sidebar-Shop col-md-12">Shop <span class="text-right glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></div> -->
 
               <div class="panel-group col-md-12" role="tablist">
-                 <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="headingOne">
+                <a role="button"class="deco-none" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="headingOne">
                 <div class="panel panel-wrapper">
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
-             
-              Genres
-              
-              </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <ul class="list-group">
-              <li class="category-group-items">Action</li>
-              <li class="category-group-items">Adventure</li>
-              <li class="category-group-items">Comedy</li>
-              <li class="category-group-items">Crime</li>
-              <li class="category-group-items">Drama</li>
-              <li class="category-group-items">Horror</li>
-              <li class="category-group-items">Science Fiction</li>
-              <li class="category-group-items">Suspense</li>
-              <li class="category-group-items">Thriller</li>
-              </ul>
-              <div class="panel-footer"></div>
-              </div>
-              </div>
-              </a>
-              </div>
+                      Genres
+                      </h4>
+                  </div>
+                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <ul class="list-group">
+                          <li class="category-group-items clickable">Action</li>
+                          <li class="category-group-items clickable">Adventure</li>
+                          <li class="category-group-items clickable">Comedy</li>
+                          <li class="category-group-items clickable">Crime</li>
+                          <li class="category-group-items clickable">Drama</li>
+                          <li class="category-group-items clickable">Horror</li>
+                          <li class="category-group-items clickable">Science Fiction</li>
+                          <li class="category-group-items clickable">Suspense</li>
+                          <li class="category-group-items clickable">Thriller</li>
+                        </ul>
+                        <div class="panel-footer"></div>
+                      </div>
+                  </div>
+                  </a>
+                </div>
       
             </div><!-- sidebar options -->
           </div><!-- sidebar content -->
         </div> <!-- sidebar div -->
        <!--  <h2>Top Movie Picks</h2> -->
-        <div class= "row-height rowHeightDiv col-md-10  col-xs-12 row">
-          <h2>Top Movies</h2>
+       <h2>Top Movies</h2>
+        <div id="movie-containers" class= "row-height rowHeightDiv col-md-10  col-xs-12 row">
           
-
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    1
-                  </div>
-              </div><!--movie-container -->
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    2
-                  </div>
-              </div><!--movie-container -->
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    3
-                  </div>
-              </div><!--movie-container -->
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    4
-                  </div>
-              </div><!--movie-container -->
-
-             <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    5
-                  </div>
-              </div><!--movie-container -->
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    6
-                  </div>
-              </div><!--movie-container -->
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    7
-                  </div>
-              </div><!--movie-container -->
-              <div id="movie-containers" class="col-md-3 col-xs-12">
-                  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
-                    8
-                  </div>
-              </div><!--movie-container -->
+             
       </div><!--movie-row -->
       </div><!-- main-container -->
 </div><!-- container-fluid-->

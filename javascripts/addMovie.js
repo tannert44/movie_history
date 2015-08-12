@@ -20,7 +20,8 @@ define(["jquery"], function($){
           "year": data.Year,
           "actors": data.Actors,
           "rating": userRating,
-          "watched": watched
+          "watched": watched,
+          "poster": data.Poster
         };
 
         if (userInput === "") {

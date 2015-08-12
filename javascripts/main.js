@@ -34,11 +34,21 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"],
       console.log(moviesObj);
     require(['hbs!../templates/movies'], 
       function(moviesTemplate) {
-      $("#main").append(moviesTemplate(moviesObj));
+      $("#movie-containers").append(moviesTemplate(moviesObj));
+
+        ///styling effects for movie containers ////
+          $('.movie-info').on('mouseover', function(){
+              $(this).addClass('shadow'); 
+            });
+          $('.movie-info').on('mouseout', function(){
+            $(this).removeClass('shadow');
+          });
+
+
     });
   });
 
-  $("#main").on("click",".delButton", function() {
+  $("#movie-containers").on("click",".delButton", function() {
    $(this).closest("div").remove();
   });
 
@@ -82,11 +92,5 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"],
   });
 
 
-  $('.movie-info').on('mouseover', function(){
-    $(this).addClass('shadow');
-  });
-  $('.movie-info').on('mouseout', function(){
-    $(this).removeClass('shadow');
-  });
 });
 
