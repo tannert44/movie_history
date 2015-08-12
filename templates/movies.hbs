@@ -1,5 +1,6 @@
 {{#each movies}}
-<div  class="col-md-3 col-xs-12 movie-margin">
+
+<div  class="col-md-3 col-xs-12 movie-margin movies" data-key="{{@key}}">
   <div class="col-md-12 col-xs-12 movie-info ">
     <div class="row posterRow">
       <div class="poster col-md-12"> <img src="http://3.bp.blogspot.com/_d1kmRW3xVDk/SxMzSTEMPjI/AAAAAAAAAas/RH5vXzCzZ-I/s1600/posterblank01.gif" width="170" height="200"> </div>
@@ -22,3 +23,15 @@
 </div> <!-- movie margin div -->
 {{/each}}
 
+{{!-- =======
+<div data-key="{{@key}}" class="col-md-3 col-xs-12 movies">
+  <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
+    <h3>{{title}}</h3><h4>({{year}})</h4>
+    <p>Starring: {{actors}}</p>
+    <p>Your Rating: {{rating}}</p>
+    <p class="genre">Genre: {{genre}}</p>
+    <button class="btn btn-danger btn-xs delButton">Delete</button>
+  </div>
+</div>
+{{/each}}
+>>>>>>> b3eacaf409da21421660ff543e5b69f561260f79 --}}

@@ -16,13 +16,12 @@ requirejs.config({
   }
 });
 
-requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"], 
-  function($, _, Handlebars, bootstrap, _firebase, addMovie) {
+requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "removeMovie","genreFilter"], 
+  function($, _, Handlebars, bootstrap, _firebase, addMovie, removeMovie, genreFilter) {
   
   var myFirebaseRef = new Firebase("https://moviehistory.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
     var films = snapshot.val();
-    
     var moviesArray = [];
     for (var i in films) {
       moviesArray[moviesArray.length] = films[i];
@@ -31,10 +30,10 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"],
     var moviesObj = {
       movies: moviesArray
     };
-      console.log(moviesObj);
+
     require(['hbs!../templates/movies'], 
       function(moviesTemplate) {
-      $("#movie-containers").append(moviesTemplate(moviesObj));
+      $("#movie-containers").append(moviesTemplate({movies: films}));
 
         ///styling effects for movie containers ////
           $('.movie-info').on('mouseover', function(){
@@ -44,13 +43,17 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"],
             $(this).removeClass('shadow');
           });
 
-
     });
+
+
   });
 
-  $("#movie-containers").on("click",".delButton", function() {
-   $(this).closest("div").remove();
+
+  $('#movie-containers').on("click",".delButton", function() {
+   var getKey = $(this).closest(".movies").attr("data-key");
+    removeMovie.deleteMovie(getKey);
   });
+
 
   $('.collapse').collapse();
 
@@ -93,4 +96,3 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie"],
 
 
 });
-
