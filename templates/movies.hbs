@@ -1,6 +1,9 @@
 {{#each movies}}
-<div id="movie-containers" class="col-md-3 col-xs-12">
+<div class="col-md-3 col-xs-12">
   <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
+    <div>
+      <img src='https://jsonp.afeld.me/?url=' + '{{poster}}'>
+    </div>
     <h3>{{title}} | {{year}}</h3>
     <p>Starring: {{actors}}</p>
     <p>Your Rating: {{rating}}</p>
