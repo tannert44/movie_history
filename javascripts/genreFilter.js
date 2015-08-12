@@ -10,6 +10,6 @@ define(["jquery"], function($) {
       }else {
         $(this).hide();
       }
-    })
+    });
   });
 });

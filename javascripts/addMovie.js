@@ -1,3 +1,6 @@
+
+
+
 define(["jquery"], function($){
   $(document).ready(function() {
     $("button").click(function(e) {
@@ -5,9 +8,12 @@ define(["jquery"], function($){
       var userInput = $("#userInput").val();
       var userRating = $("#userRating").val();
       console.log(userInput, userRating);
+
       $.ajax({
         url: "http://www.omdbapi.com/?t=" + userInput,
       }).done(function(data){
+
+        console.log(data);
         var watched;
         if($("#watch").is(":checked")) {
           watched = true;
@@ -39,7 +45,7 @@ define(["jquery"], function($){
             method: "POST",
             data: JSON.stringify(movieObj)
           }).done(function(){
-              location.reload();
+              // location.reload();
             });
         }
       });

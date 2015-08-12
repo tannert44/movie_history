@@ -22,6 +22,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "remo
   var myFirebaseRef = new Firebase("https://moviehistory.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
     var films = snapshot.val();
+
     var moviesArray = [];
     for (var i in films) {
       moviesArray[moviesArray.length] = films[i];
@@ -34,9 +35,15 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "remo
     require(['hbs!../templates/movies'], 
       function(moviesTemplate) {
       $("#movie-containers").append(moviesTemplate({movies: films}));
+
+        ///styling effects for movie containers ////
+          $('.movie-info').on('mouseover', function(){
+              $(this).addClass('shadow'); 
+            });
+          $('.movie-info').on('mouseout', function(){
+            $(this).removeClass('shadow');
+          });
     });
-
-
   });
 
   $('#movie-containers').on("click",".delButton", function() {
@@ -83,12 +90,5 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "remo
   $('h2').on('mouseout', function(){
     $(this).removeClass('h2-weight');
   });
-
-
-  $('.movie-info').on('mouseover', function(){
-    $(this).addClass('shadow');
-  });
-  $('.movie-info').on('mouseout', function(){
-    $(this).removeClass('shadow');
-  });
 });
+
