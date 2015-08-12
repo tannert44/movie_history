@@ -5,6 +5,18 @@ body {
 .navbar {
   font-size: 16px; }
 
+.modal-header {
+  background-color: #ddd; }
+
+.modal-body {
+  background-color: #eee; }
+
+.modal-footer {
+  background-color: #ddd; }
+
+.form-control {
+  background-color: #fff; }
+
 .sidebar {
   height: 100%;
   margin-left: 10px; }
@@ -45,17 +57,25 @@ body {
 .glyphicon-shopping-cart {
   float: right; }
 
-.panel > a {
-  color: #333; }
+a.deco-none {
+  color: #000000 !important;
+  text-decoration: none; }
 
-#collapeOne > a li {
-  text-decoration: none !important;
-  font-weight: 100; }
+.category-group-items:hover {
+  background-color: rgba(0, 121, 193, 0.7);
+  color: #333;
+  font-weight: 300; }
+
+.clickable {
+  cursor: pointer; }
 
 .panel {
   height: 12.5%;
   background-color: #eee;
   text-decoration: none; }
+
+.panel-title {
+  font-size: 18px; }
 
 .panel-group {
   padding-left: 0;
@@ -65,7 +85,8 @@ body {
 .panel-group .panel-heading + .panel-collapse > .list-group {
   background-color: #ddd;
   list-style: none;
-  text-align: center; }
+  text-align: center;
+  font-weight: 100; }
 
 .panel-footer {
   background-color: #eee;
@@ -90,8 +111,69 @@ h2 {
   height: 500px; }
 
 #movie-containers {
-  height: 100%;
+  height: 350px;
   margin-bottom: 20px; }
+
+.movie-margin {
+  margin-bottom: 20px; }
+
+.movie-info {
+  border: 1px solid #DCDCDC;
+  height: 100%;
+  background-color: #eee; }
+
+.posterRow {
+  height: 200px;
+  background-color: #ddd; }
+
+.poster {
+  height: 100%;
+  width: 100%;
+  text-align: center; }
+
+.titleRow {
+  height: 65px;
+  border-bottom: 1px solid #DCDCDC; }
+
+.movieTitle {
+  margin-top: 0;
+  height: 100%;
+  font-size: 14px; }
+
+.actorRow {
+  height: 50px;
+  border-bottom: 1px solid #DCDCDC; }
+
+.actors {
+  height: 100%; }
+
+.actors p {
+  margin-top: 5px;
+  font-size: 11px; }
+
+.ratingButtonDiv {
+  height: 30px;
+  padding-top: 3px; }
+
+.delButton {
+  color: #000 !important;
+  text-decoration: none;
+  background-color: #eee;
+  text-align: center;
+  padding-right: 0;
+  height: 100%; }
+
+.btn-hover {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none; }
+
+.button-padding {
+  padding-bottom: 10px;
+  height: 100%; }
+
+.glyphicon-trash {
+  color: crimson; }
 
 .shadow {
   -webkit-box-shadow: 4px 6px 5px 0px rgba(220, 220, 220, 0.77);
@@ -103,7 +185,7 @@ h2 {
   -moz-box-shadow: 6px 9px 10px 0px rgba(113, 225, 240, 0.25);
   box-shadow: 6px 9px 10px 0px rgba(113, 225, 240, 0.25); }
 
-#movie-info {
+.movie-info {
   border: 1px solid #DCDCDC;
   height: 100%;
   background-color: #eee; }
