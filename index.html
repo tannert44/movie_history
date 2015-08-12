@@ -6,40 +6,87 @@
 
       <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="styles/style.css">
+      <link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
+    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
-    </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
+      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Add</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Add</a></li>
+        </ul>
+
+          <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
 <!-- Movie List container -->
 
 
-<div class="container-fluid"> 
+<div class="container-fluid container-margin"> 
       <div id="main-container"class="row">
 
-        <div class= "row-height rowHeightDiv col-md-12 col-xs-12 row row1">
-          <!-- <div id="movie-row" class= "col-md-12 col-xs-6 row row1"> --> 
+        <div class="row row-height sidebar col-md-2 hidden-xs hidden-sm">
+          <div class="sidebar-content col-md-10 hidden-xs hidden-sm">
+            <div class="row sidebar-Options">
+              <div class="sidebar-MyMovies col-md-12">My Movies</div>
+              <div class="sidebar-Shop col-md-12">Shop <span class="text-right glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></div>
+
+              <div class="panel-group col-md-12" role="tablist">
+                 <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="headingOne">
+                <div class="panel panel-wrapper">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+             
+              Genres
+              
+              </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <ul class="list-group">
+              <li class="category-group-items">Action</li>
+              <li class="category-group-items">Adventure</li>
+              <li class="category-group-items">Comedy</li>
+              <li class="category-group-items">Crime</li>
+              <li class="category-group-items">Drama</li>
+              <li class="category-group-items">Horror</li>
+              <li class="category-group-items">Science Fiction</li>
+              <li class="category-group-items">Suspense</li>
+              <li class="category-group-items">Thriller</li>
+              </ul>
+              <div class="panel-footer"></div>
+              </div>
+              </div>
+              </a>
+              </div>
+      
+            </div><!-- sidebar options -->
+          </div><!-- sidebar content -->
+        </div> <!-- sidebar div -->
+       <!--  <h2>Top Movie Picks</h2> -->
+        <div class= "row-height rowHeightDiv col-md-10  col-xs-12 row">
+          <h2>Top Movies</h2>
+          
 
               <div id="movie-containers" class="col-md-3 col-xs-12">
                   <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
@@ -62,12 +109,6 @@
                   </div>
               </div><!--movie-container -->
 
-          <!-- </div> --><!--movie-row -->
-       <!--  </div> --> <!-- row-height row1 -->
-<!-- 
-        <div class= "row-height rowHeightDiv ">
-          <div id="movie-row" class= "col-md-12 col-xs-6 row row2">  -->
-
              <div id="movie-containers" class="col-md-3 col-xs-12">
                   <div id="movie-info" class="col-md-12 col-xs-12 movie-info">
                     5
@@ -88,13 +129,6 @@
                     8
                   </div>
               </div><!--movie-container -->
-             
-              
-         <!--  </div> --><!--movie-row -->
-        <!-- </div> --> <!-- row-height row2 -->
-
-
-
       </div><!--movie-row -->
       </div><!-- main-container -->
 </div><!-- container-fluid-->
@@ -105,7 +139,8 @@
 
 
 
-<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<!-- <script src="./bower_components/jquery/dist/jquery.min.js"></script> -->
+<script data-main="javascripts/main" src="bower_components/requirejs/require.js"></script>
 
 </body>
 </html>

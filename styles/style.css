@@ -1,22 +1,110 @@
 body {
-  font: 100% Helvetica, sans-serif;
+  font: 100% "Lato", sans-serif;
   color: #333; }
 
+.navbar {
+  font-size: 16px; }
+
+.sidebar {
+  height: 100%;
+  margin-left: 10px; }
+
+.sidebar-content {
+  height: 100%;
+  background-color: #eee; }
+
+.sidebar-Options {
+  height: 100%;
+  font-size: 18px;
+  text-align: left; }
+
+.sidebar-MyMovies {
+  height: 12.5%;
+  padding: 15px 25px 10px 15px;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid transparent; }
+
+.red {
+  background-color: rgba(183, 57, 69, 0.7); }
+
+.red2 {
+  background-color: #E33243; }
+
+.blue2 {
+  background-color: #6760B9; }
+
+.blue {
+  background-color: rgba(103, 96, 185, 0.7); }
+
+.sidebar-Shop {
+  height: 12.5%;
+  padding: 15px 25px 10px 15px;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid transparent; }
+
+.glyphicon-shopping-cart {
+  float: right; }
+
+.panel > a {
+  color: #333; }
+
+#collapeOne > a li {
+  text-decoration: none !important;
+  font-weight: 100; }
+
+.panel {
+  height: 12.5%;
+  background-color: #eee;
+  text-decoration: none; }
+
+.panel-group {
+  padding-left: 0;
+  padding-right: 0;
+  border-top: 1px solid #DCDCDC; }
+
+.panel-group .panel-heading + .panel-collapse > .list-group {
+  background-color: #ddd;
+  list-style: none;
+  text-align: center; }
+
+.panel-footer {
+  background-color: #eee;
+  border-bottom: 1px solid #DCDCDC; }
+
+.highlight {
+  background-color: #f5f5f5; }
+
+h2 {
+  padding-left: 12px;
+  margin-top: auto;
+  margin-bottom: 20px;
+  font-weight: 300; }
+
+.h2-weight {
+  font-size: 31px; }
+
+.container-margin {
+  margin-top: 50px; }
+
 #main-container {
-  border: 1px solid black; }
+  height: 500px; }
 
 #movie-containers {
   height: 100%;
   margin-bottom: 20px; }
 
-.row1 {
-  height: 100%; }
+.shadow {
+  -webkit-box-shadow: 4px 6px 5px 0px rgba(220, 220, 220, 0.77);
+  -moz-box-shadow: 4px 6px 5px 0px rgba(220, 220, 220, 0.77);
+  box-shadow: 4px 6px 5px 0px rgba(220, 220, 220, 0.77); }
 
-.row2 {
-  height: 100%;
-  margin-bottom: 20px; }
+.shadow-click {
+  -webkit-box-shadow: 6px 9px 10px 0px rgba(113, 225, 240, 0.25);
+  -moz-box-shadow: 6px 9px 10px 0px rgba(113, 225, 240, 0.25);
+  box-shadow: 6px 9px 10px 0px rgba(113, 225, 240, 0.25); }
 
 #movie-info {
+  border: 1px solid #DCDCDC;
   height: 100%;
   background-color: #eee; }
 
