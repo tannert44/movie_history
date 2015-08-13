@@ -19,7 +19,7 @@ requirejs.config({
 requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "removeMovie","genreFilter"], 
   function($, _, Handlebars, bootstrap, _firebase, addMovie, removeMovie, genreFilter) {
   
-  var myFirebaseRef = new Firebase("https://moviehistory.firebaseio.com/movies");
+  var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
     var films = snapshot.val();
 
