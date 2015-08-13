@@ -16,16 +16,16 @@ requirejs.config({
   }
 });
 
-requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "removeMovie","genreFilter"], 
-  function($, _, Handlebars, bootstrap, _firebase, addMovie, removeMovie, genreFilter) {
+requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "add-wishlist", "removeMovie"], 
+  function($, _, Handlebars, bootstrap, _firebase, addWishlist, removeMovie) {
   
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
     var films = snapshot.val();
 
     var moviesArray = [];
-    for (var i in films) {
-      moviesArray[moviesArray.length] = films[i];
+    for (var key in films) {
+      moviesArray[moviesArray.length] = films[key];
     }
 
     var moviesObj = {
@@ -34,7 +34,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "remo
 
     require(['hbs!../templates/movies'], 
       function(moviesTemplate) {
-      $("#movie-containers").append(moviesTemplate({movies: films}));
+      $("#movie-containers").html(moviesTemplate({movies: films}));
 
         ///styling effects for movie containers ////
           $('.movie-info').on('mouseover', function(){
@@ -60,43 +60,10 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "remo
    location.reload();
  });
 
-  $('.collapse').collapse();
+  
 
 
 
-  ///// mouseover, mouseout, click effects ///////////////////////////////////
 
-  $('.sidebar-MyMovies').on('mouseover', function(){
-    $(this).addClass('red');
-  });
-
-  $('.sidebar-MyMovies').on('mouseout', function(){
-    $(this).removeClass('red');
-  });
-
-  $('.sidebar-MyMovies').on('click', function(){
-    $(this).toggleClass('red2');
-  });
-
-
-  $('.sidebar-Shop').on('mouseover', function(){
-    $(this).addClass('blue');
-  });
-
-  $('.sidebar-Shop').on('mouseout', function(){
-    $(this).removeClass('blue');
-  });
-
-  $('.sidebar-Shop').on('click', function(){
-    $(this).toggleClass('blue2');
-  });
-
-
-  $('h2').on('mouseover', function(){
-    $(this).addClass('h2-weight');
-  });
-  $('h2').on('mouseout', function(){
-    $(this).removeClass('h2-weight');
-  });
 });
 
