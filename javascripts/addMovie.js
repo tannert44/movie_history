@@ -39,7 +39,7 @@ define(["jquery"], function($){
         }
         else {
           $.ajax({
-            url: "https://moviehistory.firebaseio.com/movies.json",
+            url: "https://movie-history-redo.firebaseio.com/movies.json",
             method: "POST",
             data: JSON.stringify(movieObj)
           }).done(function(){
