@@ -235,7 +235,7 @@ img {
 
 .ratingButtonDiv{
   height:25px;
-  padding-top: 3px;
+  padding-top: 0px;
 }
 
 .delButton {
@@ -254,6 +254,7 @@ img {
 }
 
 .button-padding{
+  padding-bottom: 10px;
   height: 100%;
 }
 .glyphicon-trash{

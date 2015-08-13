@@ -167,7 +167,7 @@ img {
 
 .ratingButtonDiv {
   height: 25px;
-  padding-top: 3px; }
+  padding-top: 0px; }
 
 .delButton {
   color: #000 !important;
@@ -183,6 +183,7 @@ img {
   text-decoration: none; }
 
 .button-padding {
+  padding-bottom: 10px;
   height: 100%; }
 
 .glyphicon-trash {
