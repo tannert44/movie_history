@@ -47,10 +47,18 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "addMovie", "remo
   });
 
   $('#movie-containers').on("click",".delButton", function() {
-   var getKey = $(this).closest(".movies").attr("data-key");
-    removeMovie.deleteMovie(getKey);
-  });
+     var retVal = confirm("This will delete this movie. Click ok to continue");
+     if (retVal === true) {
+       var getKey = $(this).closest(".movies").attr("data-key");
+       removeMovie.deleteMovie(getKey);     
+     } else {
+       return false;
+       }
+ });
 
+  $('#myModal').on('hidden.bs.modal', function () {
+   location.reload();
+ });
 
   $('.collapse').collapse();
 

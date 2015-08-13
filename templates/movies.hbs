@@ -1,23 +1,35 @@
 {{#each movies}}
+
 <div  class="col-md-3 col-xs-12 movie-margin movies" data-key="{{@key}}">
   <div class="col-md-12 col-xs-12 movie-info ">
+
     <div class="row posterRow">
-      <div class="poster col-md-12"> <img src="http://3.bp.blogspot.com/_d1kmRW3xVDk/SxMzSTEMPjI/AAAAAAAAAas/RH5vXzCzZ-I/s1600/posterblank01.gif" width="170" height="200"> </div>
-    </div> <!-- posterRow-->
+      <div class="poster col-md-12 col-sm-12 col-xs-12">
+        <img class= "col-md-12 col-md-offset-0 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3"src="http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2012/07/film-icon.png" width="200" height="175">
+      </div>
+    </div> <!-- end posterRow-->
+
     <div class="row titleRow">
-      <div class="movieTitle col-md-12"> <h4>{{title}}</h4><h6>( {{year}} )</h6></div>
-    </div> <!-- titleRow-->
+      <div class="movieTitle col-md-12 col-sm-12 col-xs-12"> 
+        <h4>{{title}} <small>( {{year}} )</small></h4>
+        <h6 class="genre">Genre: {{genre}}</h6>
+      </div>
+    </div> <!-- end titleRow-->
 
     <div class="row actorRow">
-      <div class="actors col-md-12 col-sm-12 col-xs-12"><p class="text-left">Starring: {{actors}}</p></div>
-    </div><!--actorRow -->
+      <div class="actors col-md-12 col-sm-12 col-xs-12">
+        <p class="text-left">Starring: {{actors}}</p>
+      </div>
+    </div><!-- end actorRow -->
 
-    <div class="row ratingButtonDiv">
-        <div class="rating col-md-5 col-sm-5 col-xs-5"><p>Rating: {{rating}}</p></div>
+   <div class="row ratingButtonDiv">
+      <div class="rating col-md-5 col-sm-5 col-xs-5"><p>Rating: {{rating}}</p></div>
         <div class="button button-padding col-md-5 col-sm-5 col-xs-5 col-md-offset-2">
-            <button class="btn btn-md delButton"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-        </div> <!-- button div -->
-    </div> <!-- rating & button row-->
+          <button class="btn btn-md delButton col-md-10 col-md-ofset-2 pull-right">
+            <span class="glyphicon glyphicon-trash pull-right" aria-hidden="true"></span>
+          </button>
+        </div> <!--end  button div -->
+      </div> <!-- end rating & button row-->
   </div> <!-- movie info div -->
 </div> <!-- movie margin div -->
 {{/each}}

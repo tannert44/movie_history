@@ -111,16 +111,19 @@ h2 {
   height: 500px; }
 
 #movie-containers {
-  height: 350px;
+  height: 370px;
   margin-bottom: 20px; }
 
 .movie-margin {
-  margin-bottom: 20px; }
+  margin-bottom: 25px; }
 
 .movie-info {
   border: 1px solid #DCDCDC;
   height: 100%;
   background-color: #eee; }
+
+img {
+  margin-top: 12px; }
 
 .posterRow {
   height: 200px;
@@ -132,7 +135,7 @@ h2 {
   text-align: center; }
 
 .titleRow {
-  height: 65px;
+  height: 85px;
   border-bottom: 1px solid #DCDCDC; }
 
 .movieTitle {
@@ -141,26 +144,37 @@ h2 {
   font-size: 14px; }
 
 .actorRow {
-  height: 50px;
+  height: 40px;
   border-bottom: 1px solid #DCDCDC; }
+
+.genre {
+  margin-top: 20px; }
 
 .actors {
   height: 100%; }
 
 .actors p {
   margin-top: 5px;
-  font-size: 11px; }
+  font-size: 11px;
+  font-weight: 400; }
+
+.rating {
+  height: 100%;
+  margin-top: 9px; }
+
+.rating p {
+  font-size: 12px; }
 
 .ratingButtonDiv {
-  height: 30px;
+  height: 25px;
   padding-top: 3px; }
 
 .delButton {
   color: #000 !important;
   text-decoration: none;
   background-color: #eee;
-  text-align: center;
-  padding-right: 0;
+  text-align: right;
+  padding-right: 5px;
   height: 100%; }
 
 .btn-hover {
@@ -169,7 +183,6 @@ h2 {
   text-decoration: none; }
 
 .button-padding {
-  padding-bottom: 10px;
   height: 100%; }
 
 .glyphicon-trash {
