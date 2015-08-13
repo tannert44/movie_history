@@ -16,8 +16,8 @@ requirejs.config({
   }
 });
 
-requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "add-wishlist", "removeMovie"], 
-  function($, _, Handlebars, bootstrap, _firebase, addWishlist, removeMovie) {
+requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", "removeMovie"], 
+  function($, _, Handlebars, bootstrap, _firebase, showWishlist, removeMovie) {
   
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
@@ -46,6 +46,10 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "add-wishlist", "
     });
   });
 
+  $(document).on("click", ".add-button", function(){
+    showWishlist();
+  });
+  
   $('#movie-containers').on("click",".delButton", function() {
      var retVal = confirm("This will delete this movie. Click ok to continue");
      if (retVal === true) {
@@ -56,9 +60,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "add-wishlist", "
        }
  });
 
-  $('#myModal').on('hidden.bs.modal', function () {
-   location.reload();
- });
+ 
 
   
 

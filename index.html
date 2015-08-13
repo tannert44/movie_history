@@ -34,12 +34,12 @@
         </ul>
 
         <div class="navbar-form navbar-right" role="search">
-          <a href="#myModal" data-toggle="modal" data-target="#myModal">Add</a>
+          
             <form class="navbar-form navbar-right"> <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
           <button class="search-button btn btn-default">Search</button>
-          <button class="add-button btn btn-default">Add To Wishlist</button>    
+          <a href="#myModal" data-toggle="modal" data-target="#myModal"><button class="add-button btn btn-default">Add To Wishlist</button></a>
         </div>        
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -52,30 +52,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Add Favorite Movies</h4>
+          <h4>Pick a Movie:</h4>
         </div>
 
         <div class="modal-body">
-          <div class="form-group">
-            <label for="movieTitle">Movie</label>
-            <input type="text" class="form-control" placeholder="Movie Title" id="userInput">
-          </div>
-          <div class="form-group">
-            <label for="rating">Rating
-            <input type="text" class="form-control" placeholder="Rate from 1 - 10" id="userRating">
-            </label>
-          </div>
-
-          <div class="row">
-            <div class="form-group col-md-4 col-md-offset-2">
-              <label>Watched</label>
-              <input type="radio" class="form-control" name="movie" id="watch" placeholder="watched">
-            </div>
-            <div class="form-group col-md-4">
-              <label>Have Not Watched</label>
-              <input type="radio" class="form-control" name="movie" id="notWatch">
-            </div>
-          </div> <!-- radio-row -->
         </div>
       
         <div class="modal-footer">
