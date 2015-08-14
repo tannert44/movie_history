@@ -21,6 +21,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
   
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
+    
     var films = snapshot.val();
 
     var moviesArray = [];
@@ -48,7 +49,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
   $(document).on("click", ".add-button", function(){
     showWishlist();
   });
-  
+  console.log("handling populate list");
   popWishlist();
   $(document).on("click", ".done-button", function(){
       
