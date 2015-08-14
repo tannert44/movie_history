@@ -18,6 +18,7 @@ define(function(){
         require(['hbs!../templates/model'], function(moviesTemplate){
             $('.modal-body').html(moviesTemplate(data.Search));
           });
+        
       });
     };
 });
