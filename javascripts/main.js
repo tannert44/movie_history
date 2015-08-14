@@ -19,8 +19,8 @@ requirejs.config({
 });
 
 
-requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase", "show-wishlist", "populate-wishlist","removeMovie"], 
-  function($, _, Handlebars, bootstrap, bootRate, _firebase, showWishlist, popWishlist, removeMovie) {
+requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase", "show-wishlist", "populate-wishlist","removeMovie", "search"], 
+  function($, _, Handlebars, bootstrap, bootRate, _firebase, showWishlist, popWishlist, removeMovie, searchMovies) {
   
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
@@ -78,11 +78,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
 
   
   
-<<<<<<< HEAD
 
-  
-=======
->>>>>>> 83e955fb5466eb4e969617a22d3b341fca2e2062
   $('#movie-containers').on("click",".delButton", function() {
      var getKey = $(this).closest(".movies").attr("data-key");
        removeMovie.deleteMovie(getKey);   
