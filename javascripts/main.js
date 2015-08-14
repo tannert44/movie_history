@@ -47,9 +47,9 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
   });
   $(document).on("click", ".add-button", function(){
     showWishlist();
-    popWishlist();
-    
   });
+  
+  popWishlist();
   $(document).on("click", ".done-button", function(){
       
       $('#myModal').modal('hide');
