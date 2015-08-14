@@ -48,23 +48,24 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
   $(document).on("click", ".add-button", function(){
     showWishlist();
     popWishlist();
-    $(document).on("click", ".done-button", function(){
+    
+  });
+  $(document).on("click", ".done-button", function(){
       
       $('#myModal').modal('hide');
     });
-  });
-  
   
   
   
   $('#movie-containers').on("click",".delButton", function() {
-     var retVal = confirm("This will delete this movie. Click ok to continue");
-     if (retVal === true) {
-       var getKey = $(this).closest(".movies").attr("data-key");
-       removeMovie.deleteMovie(getKey);     
-     } else {
-       return false;
-       }
+     var getKey = $(this).closest(".movies").attr("data-key");
+       removeMovie.deleteMovie(getKey);   
+     // var retVal = confirm("This will delete this movie. Click ok to continue");
+     // if (retVal === true) {
+        
+     // } else {
+     //   return false;
+     //   }
  });
 
  
