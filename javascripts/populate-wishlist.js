@@ -13,6 +13,7 @@ define(function(){
 
         data.poster = "http://img.omdbapi.com/?i=" + data.imdbID + "&apikey=8513e0a1";
         data.rating = 0;
+        data.wishlist = true;
         data.watched=false;
         console.log("done");
         $.ajax({
