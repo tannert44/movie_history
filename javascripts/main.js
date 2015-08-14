@@ -5,10 +5,12 @@ requirejs.config({
     'hbs': '../bower_components/require-handlebars-plugin/hbs',
     'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
     'firebase': '../bower_components/firebase/firebase',
-    'lodash': '../bower_components/lodash/lodash.min'
+    'lodash': '../bower_components/lodash/lodash.min',
+    'bootstrap-rating': '../bower_components/bootstrap-rating/bootstrap-rating.min'
   },
   shim: {
-    'bootstrap': ['jquery'],  
+    'bootstrap': ['jquery'],
+    'bootstrap-rating': ['bootstrap'],
     'firebase': {
       exports: 'Firebase'
 
@@ -16,12 +18,14 @@ requirejs.config({
   }
 });
 
-requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", "populate-wishlist","removeMovie", "search"], 
-  function($, _, Handlebars, bootstrap, _firebase, showWishlist, popWishlist, removeMovie, searchMovies) {
+
+requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase", "show-wishlist", "populate-wishlist","removeMovie"], 
+  function($, _, Handlebars, bootstrap, bootRate, _firebase, showWishlist, popWishlist, removeMovie) {
   
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
-      myFirebaseRef.on("value", function(snapshot) {
-       var films = snapshot.val();
+  myFirebaseRef.on("value", function(snapshot) {
+    
+    var films = snapshot.val();
 
        var moviesArray = [];
      for (var key in films) {
@@ -38,6 +42,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
       function(moviesTemplate) {
         $("#movie-containers").html(moviesTemplate({movies: films}));
         $('.movies[watched="true"]').hide();
+        $('.rating').rating();
         ///styling effects for movie containers ////
         $('.movie-info').on('mouseover', function(){
           $(this).addClass('shadow'); 
@@ -65,7 +70,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
   $(document).on("click", ".add-button", function(){
     showWishlist();
   });
-  
+  console.log("handling populate list");
   popWishlist();
   $(document).on("click", ".done-button", function(){
     $('#myModal').modal('hide');
@@ -73,8 +78,11 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "firebase", "show-wishlist", 
 
   
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> 83e955fb5466eb4e969617a22d3b341fca2e2062
   $('#movie-containers').on("click",".delButton", function() {
      var getKey = $(this).closest(".movies").attr("data-key");
        removeMovie.deleteMovie(getKey);   
