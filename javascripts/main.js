@@ -21,7 +21,6 @@ requirejs.config({
 
 requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase", "show-wishlist", "populate-wishlist","removeMovie", "search"], 
   function($, _, Handlebars, bootstrap, bootRate, _firebase, showWishlist, popWishlist, removeMovie, searchMovies) {
-  
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies");
   myFirebaseRef.on("value", function(snapshot) {
     
