@@ -83,7 +83,8 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
 $("#movie-containers").on("click", ".addtowishlist", function() {
   //var getKey = $(this).closest(".movies").attr("data-key");
   console.log($(this));  
-  var dataKey = $(".movies").attr("data-key");
+  //popWishlist();
+    var dataKey = $(this).attr("data-key");
 console.log(dataKey);
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies/" + dataKey);
     myFirebaseRef.update({wishlist: true});
