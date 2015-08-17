@@ -49,15 +49,9 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
           });
     });
   });
-  $(document).on("click", ".add-button", function(){
+  $(document).on("click", ".search-button", function(){
     showWishlist();
   });
-  console.log("handling populate list");
-  popWishlist();
-  $(document).on("click", ".done-button", function(){
-      
-      $('#myModal').modal('hide');
-    });
   
   
   $('#movie-containers').on("click",".delButton", function() {
