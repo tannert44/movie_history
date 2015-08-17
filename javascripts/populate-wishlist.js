@@ -1,12 +1,7 @@
 define(function(){
-  return function(){
-      $(document).on("click", ".addtowishlist", function(){
-      console.log("button clicked");
-     // console.log($(this).attr("id"));
-     var $titleModel = $(this).attr("id");
-      console.log($titleModel);
+  return function(movieId){
       $.ajax({
-        url:"http://www.omdbapi.com/?i=" + $titleModel,
+        url:"http://www.omdbapi.com/?i=" + movieId,
         method: "GET"
       }).done(function(data){
         console.log("done fired");
@@ -25,6 +20,5 @@ define(function(){
           console.log("loaded to firebase");
         });
       });
-    });
   };
 });
