@@ -82,28 +82,36 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
   $('#movie-containers').on("click",".delButton", function() {
      var getKey = $(this).closest(".movies").attr("data-key");
        removeMovie.deleteMovie(getKey);   
-     // var retVal = confirm("This will delete this movie. Click ok to continue");
-     // if (retVal === true) {
-        
-     // } else {
-     //   return false;
-     //   }
+
   });
 
   $("#movie-containers").on("click", ".addtowatched", function() {
 //var getKey = $(this).closest(".movies").attr("data-key");
   console.log($(this));  
-  var dataKey = $(".movies").attr("data-key");
-console.log(dataKey);
+   // var getKey = $(this).closest(".movies").attr("data-key");
+  var dataKey = $(this).attr("data-key");
+  console.log(dataKey);
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies/" + dataKey);
-    myFirebaseRef.update({watched: true});
+    myFirebaseRef.update({watched: true, wishlist: false});
+
 
   //$(this).closest($(".wishlist")).addClass("watched").removeClass("wishlist");
   
   console.log("Changed to watched");
     });
 
+$("#movie-containers").on("click", ".addtowishlist", function() {
+  //var getKey = $(this).closest(".movies").attr("data-key");
+  console.log($(this));  
+  var dataKey = $(".movies").attr("data-key");
+console.log(dataKey);
+  var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies/" + dataKey);
+    myFirebaseRef.update({wishlist: true});
 
+  //$(this).closest($(".wishlist")).addClass("watched").removeClass("wishlist");
+  
+  console.log("Changed to watched");
+    });
 
 
 
