@@ -1,7 +1,7 @@
 {{#each movies}}
 
 
-<div  class="col-md-3 col-xs-12 movie-margin movies" watched="{{watched}}" wishlist="{{wishlist}}" showmovies="{{showmovies}}">
+<div  class="col-md-3 col-xs-12 movie-margin movies" watched="{{watched}}" wishlist="{{wishlist}}">
   <div class="col-md-12 col-xs-12 movie-info ">
 
    <div class="row ratingButtonDiv">
@@ -18,8 +18,10 @@
       </div>
     <div class="row titleRow">
       <div class="movieTitle col-md-12 col-sm-12 col-xs-12">
-        <h4 class="movie-title" id="{{Title}}">{{Title}} <small>( {{Year}} )</small></h4>
-        <div class="addtowishlist"><h5><a href="#">Add to wishlist</a></h5></div>
+        <h4 class="movie-title">
+        <div class="id={{imdbID}}">{{Title}} <small>( {{Year}} )</small></h4>
+        <div class="addtowishlist" id="{{imdbID}}"><h5><a href="#">Add to wishlist</a></h5></div>
+        </div>
       </div>
      </div> <!-- end titleRow-->
     </div> <!-- end posterRow-->

@@ -1,11 +1,12 @@
 define(function(){
   return function(){
-      $(document).on("click", ".add-movie", function(){
+      $(document).on("click", ".addtowishlist", function(){
       console.log("button clicked");
-      var $titleModel = $(this).parent().attr("class");
+     // console.log($(this).attr("id"));
+     var $titleModel = $(this).attr("id");
       console.log($titleModel);
       $.ajax({
-        url:"http://www.omdbapi.com/?t=" + $titleModel,
+        url:"http://www.omdbapi.com/?i=" + $titleModel,
         method: "GET"
       }).done(function(data){
         console.log("done fired");

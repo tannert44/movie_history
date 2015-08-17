@@ -83,7 +83,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
 $("#movie-containers").on("click", ".addtowishlist", function() {
   //var getKey = $(this).closest(".movies").attr("data-key");
   console.log($(this));  
-  //popWishlist();
+  popWishlist();
     var dataKey = $(this).attr("data-key");
 console.log(dataKey);
   var myFirebaseRef = new Firebase("https://movie-history-redo.firebaseio.com/movies/" + dataKey);
@@ -98,18 +98,22 @@ console.log(dataKey);
 
 //Watched button in NavBar
   $(".watchedbtn").on("click", function() {
+    $('.movies[watched="true"]').show();
+    $('.movies[watched="false"]').hide();
 
-  $('.movies[watched="false"]').hide();
+
+});
+  /*$('.movies[watched="false"]').hide();
 
   $(".wishlistbtn").on("click", function() {
     $(".movies").each(function() {
-       $(".watched").css('display', 'none');
+       $('.movies[watched="true"]').css('display', 'none');
     });
 
 
 
     });
-
 
   });
+*/
 });
