@@ -36,7 +36,7 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
       movies: moviesArray
     };
     
-    searchMovies(moviesArray);
+    // searchMovies(moviesArray);
     
     require(['hbs!../templates/movies'], 
       function(moviesTemplate) {
@@ -51,11 +51,13 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
           $(this).removeClass('shadow');
         });
     });
+    $(document).on("click", ".search-button", function(){
+      showWishlist(moviesArray);
+      searchMovies(moviesArray);
+    });
   });
 
-  $(document).on("click", ".search-button", function(){
-    showWishlist();
-  });
+  
   
   
 

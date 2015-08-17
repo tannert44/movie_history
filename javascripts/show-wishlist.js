@@ -1,5 +1,5 @@
-define(function(){
-  return function(){
+define(function(moviesArray){
+  return function(moviesArray){
       var userInput = $('.form-control').val();
       console.log(userInput);
       $.ajax({
@@ -15,8 +15,19 @@ define(function(){
           
         });
         console.log(data.Search);
+///////////////////////////////
+        $.each(data.Search, function(index, value){
+          moviesArray.push(value);
+        });
+        // moviesArray.sort();
+        // moviesArray.push(data.Search);
+        console.log(moviesArray);
+
+/////////////////////////
+
+
         require(['hbs!../templates/movies'], function(moviesTemplate){
-            $('#movie-containers').html(moviesTemplate({movies: data.Search}));
+            $('#movie-containers').html(moviesTemplate({movies: moviesArray}));
           });
         
       });
