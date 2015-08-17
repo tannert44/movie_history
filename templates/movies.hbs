@@ -1,7 +1,7 @@
 {{#each movies}}
 
 
-<div  class="col-md-3 col-xs-12 movie-margin movies" watched="{{watched}}" data-key="{{@key}}">
+<div  class="col-md-3 col-xs-12 movie-margin movies" watched="{{watched}}" wishlist="{{wishlist}}" showmovies="{{showmovies}}">
   <div class="col-md-12 col-xs-12 movie-info ">
 
    <div class="row ratingButtonDiv">
@@ -17,14 +17,38 @@
         <img class= "col-md-12 col-md-offset-0 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3" src={{poster}} width="200" height="175">
       </div>
     </div> <!-- end posterRow-->
-
-    <div class="row titleRow">
+  <!-- Showing movies to add to wishlist -- > 
+        {{#if showmovies}}
+ <div class="row titleRow">
       <div class="movieTitle col-md-12 col-sm-12 col-xs-12">
         <h4 class="movie-title" id="{{Title}}">{{Title}} <small>( {{Year}} )</small></h4>
-        <div class="addtowatched"><h5><a href="#">Watched</a></h5></div>
+        <div class="addtowishlist"><h5><a href="#">Add to wishlist</a></h5></div>
+
+      </div>
+    </div> <!-- end titleRow-->
+
+    {{/if}}
+<!-- If Movie Watched is "true" Display -->
+    {{#if watched}}
+ <div class="row titleRow">
+      <div class="movieTitle col-md-12 col-sm-12 col-xs-12">
+        <h4 class="movie-title" id="{{Title}}">{{Title}} <small>( {{Year}} )</small></h4>
         <input type="hidden" class="rating"/>
       </div>
     </div> <!-- end titleRow-->
+
+    {{/if}}
+<!-- If Movie is in Wishlist and wishlist is "true" Display -->
+
+        {{#if wishlist}}
+ <div class="row titleRow">
+      <div class="movieTitle col-md-12 col-sm-12 col-xs-12">
+        <h4 class="movie-title" id="{{Title}}">{{Title}} <small>( {{Year}} )</small></h4>
+        <div class="addtowatched" data-key="{{@key}}"><h5><a href="#">Add To Watched</a></h5></div>
+      </div>
+    </div> <!-- end titleRow-->
+
+    {{/if}}
   </div> <!-- movie info div -->
 </div> <!-- movie margin div -->
 {{/each}}
