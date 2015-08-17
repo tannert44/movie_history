@@ -41,7 +41,10 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
     require(['hbs!../templates/movies'], 
       function(moviesTemplate) {
         $("#movie-containers").html(moviesTemplate({movies: films}));
-        $('.movies[watched="true"]').hide();
+
+        //$('.movies[watched="true"]').hide();
+
+
         $('.rating').rating();
         ///styling effects for movie containers ////
         $('.movie-info').on('mouseover', function(){
@@ -111,7 +114,7 @@ console.log(dataKey);
   $(".watchedbtn").on("click", function() {
 
   $('.movies[watched="false"]').hide();
-
+});
   $(".wishlistbtn").on("click", function() {
     $(".movies").each(function() {
        $(".watched").css('display', 'none');
@@ -123,4 +126,4 @@ console.log(dataKey);
 
 
   });
-});
+
