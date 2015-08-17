@@ -102,6 +102,14 @@ $("#movie-containers").on("click", ".addtowishlist", function() {
 
 
 });
+  $(".wishlistbtn").on("click", function() {
+    $('.movies[watched="false"]').show();
+    $('.movies[watched="true"]').hide();
+
+
+});
+
+
   /*$('.movies[watched="false"]').hide();
 
   $(".wishlistbtn").on("click", function() {
