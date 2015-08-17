@@ -53,29 +53,9 @@ requirejs(["jquery", "lodash", "hbs", "bootstrap", "bootstrap-rating", "firebase
     });
   });
 
-
-
-    // ONLY DISPLAY WISHLIST 
-/*       $(document).change(function() { 
-        $(".watched").css('display', 'none');
-        });
-       // ONLY DISPLAY WATCHED 
-      $( ".watchedbtn").on("click", function(){
-      $(".wishlist").css('display', 'none');
-        });
-    
-*/
-
-
-  $(document).on("click", ".add-button", function(){
+  $(document).on("click", ".search-button", function(){
     showWishlist();
   });
-  console.log("handling populate list");
-  popWishlist();
-  $(document).on("click", ".done-button", function(){
-    $('#myModal').modal('hide');
-  });
-
   
   
 

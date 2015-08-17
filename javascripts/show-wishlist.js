@@ -15,8 +15,8 @@ define(function(){
           
         });
         console.log(data.Search);
-        require(['hbs!../templates/model'], function(moviesTemplate){
-            $('.modal-body').html(moviesTemplate(data.Search));
+        require(['hbs!../templates/movies'], function(moviesTemplate){
+            $('#movie-containers').html(moviesTemplate({movies: data.Search}));
           });
         
       });
